@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { GuardarEnStorage } from '../helpers/GuardarEnStorage';
 
 export const Crear = () => {
 
@@ -31,10 +32,13 @@ export const Crear = () => {
         };
 
         // Guardamos la info en el estado
-        setPeliState(peli)
+        setPeliState(peli);
+        // Guardar en el local storage
+        GuardarEnStorage("pelis", peli);
 
-        console.log(peliState);
     }
+
+
 
   return (
     <div className='add'>
@@ -42,7 +46,7 @@ export const Crear = () => {
 
         <strong>
             {/* Si existe un titulo y una descripcion nos lo enseña */}
-            {(titulo && descripcion) && "Has creado la pelicula: " + titulo};
+            {(titulo && descripcion) && "Has creado la pelicula: " + titulo}
         </strong>
 
         <form onSubmit={conseguirDatosForm}>
