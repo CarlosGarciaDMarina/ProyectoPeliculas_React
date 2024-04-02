@@ -1,4 +1,7 @@
 import './App.css';
+import { Buscador } from './components/Buscador';
+import { Crear } from './components/Crear';
+import { Listado } from './components/Listado';
 
 function App() {
   return (
@@ -9,7 +12,7 @@ function App() {
         <div className='logo'>
           <div className='play'></div>
         </div>
-        <h1>Mis peliculas</h1>
+        <h1>Mis películas</h1>
       </header>
 
       {/* Barra de navegación */}
@@ -19,7 +22,7 @@ function App() {
             <a href='/#'>Inicio</a>
           </li>
           <li>
-            <a href='/#'>Peliculas</a>
+            <a href='/#'>Películas</a>
           </li>
           <li>
             <a href='/#'>Blog</a>
@@ -32,64 +35,23 @@ function App() {
 
       {/* Contenido principal */}
       <section className='content'>
+        
         {/* Peliculas */}
-        <article className='peli-item'>
-          <h3 className='title'>Desarrollo Web</h3>
-          <p className='description'>carlosgarciaweb.es</p>
-
-          <button className='edit'>Editar</button>
-          <button className='delete'>Borrar</button>
-        </article>
-
-        <article className='peli-item'>
-          <h3 className='title'>Desarrollo Web</h3>
-          <p className='description'>carlosgarciaweb.es</p>
-
-          <button className='edit'>Editar</button>
-          <button className='delete'>Borrar</button>
-        </article>   
-
-        <article className='peli-item'>
-          <h3 className='title'>Desarrollo Web</h3>
-          <p className='description'>carlosgarciaweb.es</p>
-
-          <button className='edit'>Editar</button>
-          <button className='delete'>Borrar</button>
-        </article>
-
-        <article className='peli-item'>
-          <h3 className='title'>Desarrollo Web</h3>
-          <p className='description'>carlosgarciaweb.es</p>
-
-          <button className='edit'>Editar</button>
-          <button className='delete'>Borrar</button>
-        </article>
-
+        <Listado></Listado>
       </section>
 
       {/* Barra lateral */}
       <aside className='lateral'>
-        <div className='search'>
-          <h3 className='title'>Buscador</h3>
-          <form>
-            <input type='text' />
-            <button>Buscar</button>
-          </form>
-        </div>
 
-        <div className='add'>
-          <h3 className='title'>Añadir pelicula</h3>
-          <form>
-            <input type='text' placeholder='Título' />
-            <textarea placeholder='Descripción' />
-            <input type='submit' value="Guardar" />
-          </form>
-        </div>
+        <Buscador></Buscador>
+        
+        <Crear></Crear>
+
       </aside>
 
       {/* Pie de página */}
       <footer className='footer'>
-        Carlos Garcia de Marina &copy; 
+      &copy; PeliculApp - Carlos Garcia de Marina.
       </footer>
 
     </div>
