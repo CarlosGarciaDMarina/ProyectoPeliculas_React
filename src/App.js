@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import './App.css';
 import { Buscador } from './components/Buscador';
 import { Crear } from './components/Crear';
 import { Listado } from './components/Listado';
 
 function App() {
+
+  // Tenemos el estado para trabajar con las listas de manera reactiva y poder comunicar los componentes
+  const [ listadoState, setListadoState ] = useState([]);
+
   return (
     <div className="layout">
 
@@ -37,7 +42,7 @@ function App() {
       <section className='content'>
         
         {/* Peliculas */}
-        <Listado></Listado>
+        <Listado listadoState={listadoState} setListadoState={setListadoState}></Listado>
       </section>
 
       {/* Barra lateral */}
@@ -45,7 +50,7 @@ function App() {
 
         <Buscador></Buscador>
         
-        <Crear></Crear>
+        <Crear setListadoState={setListadoState} ></Crear>
 
       </aside>
 
