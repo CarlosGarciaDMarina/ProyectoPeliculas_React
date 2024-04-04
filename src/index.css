@@ -168,9 +168,9 @@ input[type="button"] {
   box-shadow: 0px 0px 6px #dddddd;
 }
 
-.lateral input[type="text"],
-.lateral input[type="search"],
-.lateral textarea {
+input[type="text"],
+input[type="search"],
+textarea {
   display: block;
   margin: 0 auto;
   margin-top: 15px;
